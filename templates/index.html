@@ -465,9 +465,14 @@
             if (response.ok) {
               // Display results
               document.getElementById("predictionValue").textContent =
-                result.prediction.toLocaleString();
+                result.prediction_kg.toLocaleString();
               document.getElementById("interpretation").textContent =
                 result.interpretation;
+              document.getElementById("resultCard").classList.add("show");
+
+              // Update unit display
+              document.querySelector(".prediction-unit").textContent =
+                "kilograms per hectare (kg/ha)";
 
               // Input summary
               const inputSummary = document.getElementById("inputSummary");
@@ -496,8 +501,6 @@
                           3
                         )}</div>
                     `;
-
-              document.getElementById("resultCard").classList.add("show");
             } else {
               // Display error
               document.getElementById("errorDiv").textContent =

@@ -164,7 +164,8 @@ def predict():
         # Prepare response
         response = {
             'prediction': prediction,
-            'unit': 'hg/ha',
+            'prediction_kg': prediction / 10,  # Convert hg/ha to kg/ha
+            'unit': 'kg/ha',
             'input_summary': {
                 'area': area,
                 'crop': item,
@@ -177,7 +178,7 @@ def predict():
             'interpretation': get_yield_interpretation(prediction)
         }
         
-        logger.info(f"Prediction made: {prediction:.2f} hg/ha for {item} in {area}")
+        logger.info(f"Prediction made: {prediction/10:.2f} kg/ha for {item} in {area}")
         return jsonify(response)
         
     except ValueError as e:
