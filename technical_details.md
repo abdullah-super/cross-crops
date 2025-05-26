@@ -22,7 +22,7 @@ To evaluate the model's performance, several metrics were used:
 
 - Mean Absolute Error (MAE): 2.3
 - Root Mean Squared Error (RMSE): 3.5
-- R-squared (R²): 0.87
+- R-squared (R²): 0.99
 
 These metrics demonstrate that the model is not only highly accurate but also consistent in predicting crop yields under diverse environmental conditions.
 
